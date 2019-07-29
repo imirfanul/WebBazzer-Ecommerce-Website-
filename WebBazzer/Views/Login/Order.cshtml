@@ -1,0 +1,135 @@
+﻿@model IEnumerable<WebBazzer.Models.Order>
+@using WebBazzer.Models 
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Order> Order = ViewBag.Order;
+}
+
+<h2>Order</h2>
+
+<style>
+    /*#wrapper {
+        width: 400px;
+        margin: 0 auto;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }*/
+
+    th {
+        background-color: skyblue;
+        color: white;
+    }
+</style>
+
+<div class="wrapper">
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="input-group mg-b-pro-edt">
+        <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Order Details</span>
+
+    </div>
+    <div class="product-status mg-b-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <table>
+                            <tr>
+                                <th>Coustomer</th>
+
+                                <th>
+                                    PaymentID
+                                </th>
+                                <th>
+                                    Shipped
+                                </th>
+                                <th>
+                                    Discount
+                                </th>
+                                <th>
+                                    Taxes
+                                </th>
+                                <th>
+                                    TotalAmount
+                                </th>
+                                <th>
+                                    isCompleted
+                                </th>
+                                <th>
+                                    OrderDate
+                                </th>
+                                <th>
+                                    DeliveryDate
+                                </th>
+                                <th>
+                                    Deliver
+                                </th>
+                                <th>
+                                   CancelOrder
+                                </th>
+                            </tr>
+                            
+
+                            @foreach (var item in Order)
+                            {
+                                <tr>
+                                    <td>@item.Coustomer.UserName</td>
+
+                                    <td>
+                                        @item.PaymentID
+                                    </td>
+                                    <td>
+                                        @item.Shipped
+                                    </td>
+                                    <td>
+                                        @item.Discount
+                                    </td>
+                                    <td>
+                                        @item.Taxes
+                                    </td>
+                                    <td>
+                                        @item.TotalAmount
+                                    </td>
+                                    <td>
+                                        @item.isCompleted
+                                    </td>
+                                    <td>
+                                        @item.OrderDate
+                                    </td>
+                                    <td>
+                                        @item.DeliveryDate
+                                    </td>
+                                    <td>
+                                        @item.Deliver
+                                    </td>
+                                    <td>
+                                        @item.CancelOrder
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+

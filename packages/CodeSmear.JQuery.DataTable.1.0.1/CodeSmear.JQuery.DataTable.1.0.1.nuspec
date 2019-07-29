@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>CodeSmear.JQuery.DataTable</id>
+    <version>1.0.1</version>
+    <title>JQuery Server Side DataTable Ajax Request Model</title>
+    <authors>Jaber Kibria</authors>
+    <owners>Jaber Kibria</owners>
+    <iconUrl>https://raw.githubusercontent.com/mhsjaber/codesmear/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a nuget package for jQuery server side datatable ajax request.</description>
+    <summary />
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>jQuery Server Side ServerSide data datatable table Jaber Kibria c co code smear</tags>
+  </metadata>
+</package>

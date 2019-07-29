@@ -1,0 +1,88 @@
+﻿@model WebBazzer.Models.Category
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #errmsg {
+        color: red;
+        position:center;
+    }
+
+    .field-validation-error {
+        margin-left: 140px;
+        color: red;
+    }
+
+    #wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 240px;
+        position:page;
+    }
+
+    #message {
+        color: red;
+        font: bolder;
+        font-family: fantasy;
+        font-size: larger;
+        font-style: italic;
+        font-feature-settings: on;
+    }
+    Label{
+         color: red;
+        font: bolder;
+        font-feature-settings: on;
+        position:center;
+    }
+    
+</style>
+
+<div id="wrapper">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="single-product-tab-area mg-b-30">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Update Category</span>
+            </div>
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="input-group mg-b-pro-edt">
+                <br />
+                @Html.LabelFor(model => model.CName, new { @class = "form-control" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CName, new { htmlAttributes = new { @class = "form-control"} })
+                    <br />
+                    @Html.ValidationMessageFor(model => model.CName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                <input type="submit" value="Update" id="submit" class="btn btn-success" />
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    </div >
+@section Scripts {
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EntityFramework.Auditing</id>
+    <version>2.0.3</version>
+    <title>Entity Framework Auditing Context</title>
+    <authors>David Breyer, Russell Wilkins</authors>
+    <owners>David Breyer, Russell Wilkins</owners>
+    <projectUrl>https://github.com/davidbreyer/EntityFrameworkRepository6</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Entity Framework Auditing Context</description>
+    <summary>Updated version of the AuditDBContext created by Russell Wilkins. Updated for Entity Framework 6.</summary>
+    <releaseNotes />
+    <copyright>Copyright 2016</copyright>
+    <tags>Entity Framework Auditing Context EntityFramework</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.2.0" />
+    </dependencies>
+  </metadata>
+</package>

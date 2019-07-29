@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Intent.Framework.EntityFramework</id>
+    <version>1.0.1</version>
+    <title>Intent Framework EntityFramework</title>
+    <authors>Joel Turner, Gareth Baars</authors>
+    <owners>Joel Turner, Gareth Baars</owners>
+    <projectUrl>https://intentarchitect.com/</projectUrl>
+    <iconUrl>https://intentarchitect.com/assets/images/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Library for EntityFramework to support ambient DbContexts and comprehensive entity deletion mechanisms</description>
+    <summary />
+    <releaseNotes />
+    <copyright>Copyright 2018</copyright>
+    <tags>Intent Architect Framework EF EntityFramework Entity</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Intent.Framework.Core" version="1.0.0" />
+        <dependency id="Intent.Framework.Domain" version="1.0.0" />
+        <dependency id="EntityFramework" version="6.2.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Intent.Framework.Core</id>
+    <version>1.0.0</version>
+    <title>Intent Framework Core</title>
+    <authors>Joel Turner, Gareth Baars</authors>
+    <owners>Joel Turner, Gareth Baars</owners>
+    <projectUrl>https://intentarchitect.com/</projectUrl>
+    <iconUrl>https://intentarchitect.com/assets/images/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Intent Framework Core Library</description>
+    <copyright>Copyright 2016</copyright>
+    <tags>Intent Architect Framework Core</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework="Unsupported0.0" />
+    </dependencies>
+  </metadata>
+</package>

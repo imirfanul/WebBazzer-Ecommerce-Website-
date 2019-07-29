@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>DataTablePagination</id>
+    <version>1.0.2</version>
+    <title>DataTablePagination</title>
+    <authors>Gustavo de Araujo Oliveira</authors>
+    <owners>Gustavo de Araujo Oliveira</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>C# pagination to integrate with plugin javascript DataTable.</description>
+    <summary />
+    <releaseNotes>Add commentaries</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Paging DataTable</tags>
+  </metadata>
+</package>

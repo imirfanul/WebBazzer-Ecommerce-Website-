@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>JQueryDataTableSerializer</id>
+    <version>1.0.0.1</version>
+    <title>JQuery DataTables Serializer</title>
+    <authors>Kelly Vernon</authors>
+    <owners>Kelly Vernon</owners>
+    <licenseUrl>https://github.com/kvernon/JQueryDataTableSerializer/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/kvernon/JQueryDataTableSerializer/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A framework for the serialization of the popular JQuery DataTables Plug-in. There are two small libraries, CubedElement.DataTable.Contracts and CubedElement.DataTable.Model, and when building this the goal was not only to make it user friendly, but to make it n-tiered and IoC friendly too!</description>
+    <summary>Datatables is a complex datagrid javascript plugin for JQuery. It does a lot things quite well. As I've worked with it in the past, I've found there's just so much information coming back that I realized there needs to be a way to organize this data not only for receiving but also returning, hence these libraries.
+
+To use this collection, I'd suggest looking at the example on github. It does a great job at showing how to send the data from the UI and how to return it.
+
+The super condensed version is this:
+1. In the UI, transform the server variables into a key / value array collection
+2. In the service layer, loop through the collection to put into the valid containers, which resides in the RequestCollection
+3. Use the RequestCollection to assist you when getting data from your data layer
+4. When translating your data to the resulting class, make sure you've implemented the IDataTableSerializer interface
+5. Send the Wrapper class</summary>
+    <releaseNotes>Version 1.0.0.0
+	* first release with unit tested items and demo project (at project site)
+	* currently targeted for .net 4 and .net 4.5</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>javascript jquery serialization datacontract datacontracts datamember datamembers datatables datatables.net wcf web-api mvc mvvm</tags>
+  </metadata>
+</package>

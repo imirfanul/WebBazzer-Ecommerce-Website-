@@ -1,0 +1,33 @@
+﻿@model WebBazzer.Models.Product
+<li>
+    <figure>
+        <a class="aa-product-img" href="@Url.Action("ViewDetails", "CProducts", new { id = Model.Id })"><img src="@Url.Content(@Model.ImageUrl)"></a>
+        <a class="aa-add-card-btn" href="@(Session["username"] != null ? Url.Action("AddToCart", "CProducts", new { id = @Model.Id }) : Url.Action("Login", "Account"))"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+        <figcaption>
+            <h4 class="aa-product-title"><a href="#">@Model.PName</a></h4>
+            <span class="aa-product-price">Rs. @Model.Price</span><span class="aa-product-old-price">
+                <del>
+                @if(Model.OldPrice!=null)
+                {
+                     <text>Rs. @Model.OldPrice</text>
+                }
+                </del>
+            </span>
+        </figcaption>
+    </figure>
+    <div class="aa-product-hvr-content">
+        <a href="@(Session["username"]!=null ? Url.Action("WishList","CProducts", new {id=@Model.Id }) :Url.Action("Login","Account"))" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+        <a href="@Url.Action("ViewDetails", "CProducts", new { id = Model.Id })" title="View Details" data-toggle="tooltip" data-placement="top"><span class="fa fa-info"></span></a>
+
+        
+    </div>
+    @*@if (Model.ProductAvailable == true)
+    {
+         <span class="aa-badge  @Model.OfferBadgeClass" href="#">@Model.OfferTitle</span>
+    }*@
+    @{
+        TempData["returnURL"] = Request.RawUrl;
+        }
+
+</li>
+

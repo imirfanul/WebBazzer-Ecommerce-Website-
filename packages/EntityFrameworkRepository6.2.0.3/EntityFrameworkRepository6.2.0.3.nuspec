@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EntityFrameworkRepository6</id>
+    <version>2.0.3</version>
+    <title>Entity Framework 6 Repository</title>
+    <authors>David Breyer</authors>
+    <owners>David Breyer</owners>
+    <projectUrl>https://github.com/davidbreyer/EntityFrameworkRepository6</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Entity Framework Repository</description>
+    <summary>A Repository for Entity Framework 6.2.0 built with EFFORT and NMemory testing in mind. Includes a Delta class for partial updates.</summary>
+    <releaseNotes />
+    <copyright>Copyright 2016</copyright>
+    <tags>Entity Framework EntityFramework Repository Effort</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.2.0" />
+    </dependencies>
+  </metadata>
+</package>

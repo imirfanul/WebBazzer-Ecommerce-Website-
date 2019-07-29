@@ -1,0 +1,93 @@
+﻿@model WebBazzer.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="~/Design/image/x-icon" href="~/Design/img/logo/logo.png">
+    <title>Login-WebBazzer</title>
+    @Styles.Render("~/Content/css")
+    <style>
+        .adminHeading {
+            font-size: 36px;
+            margin-left: 450px;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        body {
+            background: #1b2a47;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @id = "loginForm" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.AntiForgeryToken()
+            <h1 class="adminHeading">Admin Panel</h1>
+            <div class="row col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Login To Admin Panal
+                    </div><br />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @name = "username", @placeholder = "Username" } })
+                            <br />
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger " })
+
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @name = "password", @type = "password", @placeholder = "Password" } })
+                            <br />
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <h4 style="color:red">@Html.ViewData["message"]</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                                <div class="checkbox ">
+                                    <label>
+                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-xs-6">
+                                <div class="form-group">
+                                    <div class="pull-right">
+                                        <button type="submit" id="btn-login" class="btn btn-success">Login</button>
+
+                                    </div><br /><br />
+                                    <div class="pull-right">
+                                        <a href="#" class="small">Forgot password ?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @Scripts.Render("~/Content/js")
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

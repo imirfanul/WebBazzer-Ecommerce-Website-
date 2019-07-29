@@ -1,0 +1,135 @@
+﻿@using WebBazzer.Models
+@model WebBazzer.Models.Customers
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutFont.cshtml";
+}
+
+<!-- Cart view section -->
+<section id="aa-myaccount">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-myaccount-area">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="aa-myaccount-login">
+                                    <h4>Login</h4>
+
+                                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "aa-login-form" }))
+                                    {
+
+                                        @Html.ValidationSummary(true)
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <label for="">Email address<span>*</span></label>
+
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @name = "UserName", @placeholder = "Email" } })
+                                        <br />
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger " })
+                                        <br />
+
+                                        <label for="">Password<span>*</span></label>
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @name = "Password", @placeholder = "Password" } })
+                                        <br />
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger " })
+                                        <br />
+
+                                        <button type="submit" class="aa-browse-btn">Login</button>
+                                        <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
+                                        <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
+                                    }
+
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="aa-myaccount-register">
+                                <h4>Register</h4>
+                                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "aa-login-form" }))
+                                {
+                                    @Html.ValidationSummary(true)
+                                    @Html.AntiForgeryToken()
+                                    <label for="">First Name<span>*</span></label>
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @name = "First_Name", @placeholder = "First name" } })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger " })
+                                    <br />
+
+
+                                    <label for="">Last Name<span>*</span></label>
+                                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @name = "Last_Name", @placeholder = "Last name" } })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger " })
+                                    <br />
+
+
+
+                                    <label for="">Username<span>*</span></label>
+                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @name = "UserName", @placeholder = "User Name" } })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger " })
+                                    <br />
+                                    <label for="">Email<span>*</span></label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @name = "Email", @placeholder = "example@exm.com" } })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger " })
+                                    <br />
+
+                                    <label for="">Password<span>*</span></label>
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @name = "Password", @placeholder = "Password" } })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger " })
+                                    <br />
+                                    <label for="">Gender<span>*</span></label>
+                                    @Html.DropDownList("Gender", new List<SelectListItem>
+        {
+        	new SelectListItem{ Text="Male", Value="Male"},
+        	new SelectListItem{ Text="Female", Value="Female"},
+            new SelectListItem{ Text="Other", Value="Other"}
+		}, "--- Select Gender ---", new { @class = "form-control pro-edt-select form-control-primary", @name = "Gender" })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.Gender)
+                                    <br />
+
+                                    <label for="">Mobile<span>*</span></label>
+                                    @Html.TextBoxFor(model => model.MobileNo, new { id = "country", @class = "form-control", @name = "Mobile1", placeholder = "Mobile No" })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.MobileNo)
+                                    <br />
+                                    <label for="">Country*<span></span></label>
+                                    @Html.TextBoxFor(model => model.Country, new { id = "country", @class = "form-control", @name = "Country", placeholder = "Country" })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.Country)
+                                    <br />
+                                    <label for="">City*<span></span></label>
+                                    @Html.TextBoxFor(model => model.City, new { id = "city", @class = "form-control", @name = "City", placeholder = "City" })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.City)
+                                    <br />
+                                    <label for="">Address*<span></span></label>
+                                    @Html.TextBoxFor(model => model.Address, new { id = "MobileNo", @class = "form-control", @name = "Address1", placeholder = "Address" })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.Address)
+                                    <label for="">Postal Code*<span></span></label>
+                                    @Html.TextBoxFor(model => model.PostalCode, new { id = "PostalCode", @class = "form-control", @name = "PostalCode", placeholder = "Address" })
+                                    <br />
+                                    @Html.ValidationMessageFor(model => model.PostalCode)
+                                    <br />
+
+
+                                    <button type="submit" class="aa-browse-btn">Register</button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Cart view section -->
+@Scripts.Render("~/Content/js")
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

@@ -1,0 +1,110 @@
+﻿@model WebBazzer.Models.SubCategorys
+
+@{
+
+    Layout = null;
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Save</h2>
+<style>
+    #errmsg {
+        color: red;
+    }
+
+    .field-validation-error {
+        margin-left: 140px;
+        color: red;
+    }
+
+    #wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 240px;
+    }
+
+    #message {
+        color: red;
+        font: bolder;
+        font-family: fantasy;
+        font-size: larger;
+        font-style: italic;
+        font-feature-settings: on;
+    }
+    h1{
+        color:red;
+        text-decoration-color:red;
+        font:bolder;
+        font-size:xx-large;
+        font-feature-settings:on;
+        
+    }
+</style>
+<div id="wrapper">
+  
+    @using (Html.BeginForm(null, null, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="single-product-tab-area mg-b-30">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+           
+           
+
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Save Sub Category</span>
+            </div>
+            <div class="input-group mg-b-pro-edt">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
+                @*@Html.LabelFor(x => x.CategoryId, new { @class = "form-control" })*@
+                @Html.DropDownListFor(x => x.CategoryId, new SelectList(ViewBag.Category ?? "", "Value", "Text"), new { id = "CategoryId", @class = "form-control pro-edt-select form-control-primary" })
+                @Html.ValidationMessageFor(x => x.CategoryId)
+            </div>
+            <div class="input-group mg-b-pro-edt">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                @Html.EditorFor(model => model.SName, new { htmlAttributes = new { @class = "form-control", placeholder = "Category Name" } })
+                @Html.ValidationMessageFor(model => model.SName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                <input type="submit" value="Save" id="submit" class="btn btn-success" />
+            </div>
+           
+        </div>
+   
+
+    }
+    @if (ViewBag.Message != null)
+    {
+        <h1>@ViewBag.Message</h1>
+    }
+
+   
+</div>
+<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Credit").keypress(function (e) {
+            //if not number display error message
+            if (e.which != 8 && e.which != 0 && (e.which < 45 || e.which > 57)) {
+                //display error message
+                $("#errmsg").html("only number allowed").show().fadeOut("slow");
+                return false;
+            }
+        });
+    });
+</script>

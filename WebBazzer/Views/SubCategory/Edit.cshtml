@@ -1,0 +1,52 @@
+﻿@model WebBazzer.Models.SubCategorys
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="single-product-tab-area mg-b-30">
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Update Sub Category</span>
+        </div>
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <div class="input-group mg-b-pro-edt">
+            <br />
+            @Html.LabelFor(model => model.Category, new { @class = "form-control" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CategoryId, new SelectList(ViewBag.Category ?? "", "Value", "Text"), new { id = "CategoryId", @class = "form-control pro-edt-select form-control-primary" })
+                <br />
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="input-group mg-b-pro-edt">
+            <br />
+            @Html.LabelFor(model => model.SName, new { @class = "form-control" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SName, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                @Html.ValidationMessageFor(model => model.SName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="input-group mg-b-pro-edt">
+            <input type="submit" value="Update" id="submit" class="btn btn-success" />
+        </div>
+    </div>
+}
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

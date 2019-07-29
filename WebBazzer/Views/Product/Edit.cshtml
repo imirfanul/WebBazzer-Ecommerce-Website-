@@ -1,0 +1,178 @@
+﻿@model WebBazzer.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #errmsg {
+        color: red;
+        position: center;
+    }
+
+    .field-validation-error {
+        margin-left: 140px;
+        color: red;
+    }
+
+    #wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 240px;
+        position: page;
+    }
+
+    #message {
+        color: red;
+        font: bolder;
+        font-family: fantasy;
+        font-size: larger;
+        font-style: italic;
+        font-feature-settings: on;
+    }
+
+    Label {
+        color: red;
+        font: bolder;
+        font-feature-settings: on;
+        position: center;
+    }
+</style>
+
+
+
+@using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <center>
+        <div class="single-product-tab-area mg-b-30">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Update Products</span>
+            </div>
+
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.CategoryId, new { @class = "form-control" })
+                <br/>
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.CategoryId, new SelectList(ViewBag.Category ?? "", "Value", "Text"), new { id = "CategoryId", @class = "form-control pro-edt-select form-control-primary" })
+                    @Html.ValidationMessageFor(model => model.CategoryId)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.SubCategoryId, new { @class = "form-control" })
+                <br />
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.SubCategoryId, new SelectList(ViewBag.SubCategory ?? "", "Value", "Text"), new { id = "SubCategoryId", @class = "form-control pro-edt-select form-control-primary" })
+                    @Html.ValidationMessageFor(model => model.SubCategoryId)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.PName, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PName)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.OldPrice, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OldPrice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OldPrice)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.Discount, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Discount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Discount)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.ReorderLevel, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ReorderLevel, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ReorderLevel)
+                </div>
+            </div>
+
+
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                <br />
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.ImageUrl, new { id = "Image", type = "file", @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ImageUrl)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.ProductAvailable, new { @class = "form-control" })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ProductAvailable, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ProductAvailable)
+                </div>
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                @Html.LabelFor(model => model.AvailableQuantity, new { @class = "form-control" })
+                <br />
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AvailableQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AvailableQuantity)
+                </div>
+            </div>
+
+
+            <div class="input-group mg-b-pro-edt">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </center>
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

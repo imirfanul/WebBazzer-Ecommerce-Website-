@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>BIA.Net.DataTable.MVC</id>
+    <version>1.8.0.3</version>
+    <title>BIA.Net.DataTable.MVC</title>
+    <authors>BIA Team (Leader: Gwenael Fillon)</authors>
+    <owners>BIA Team (Leader: Gwenael Fillon)</owners>
+    <projectUrl>https://github.com/BIAdotNet/BIA.Net</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/BIAdotNet/BIA.Net/master/img/LogoBIA.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>jQuery DataTable</description>
+    <summary />
+    <copyright>Copyright © BIA 2018</copyright>
+    <tags>.Net MVC Helpers jQuery DataTable Model Search</tags>
+    <dependencies />
+  </metadata>
+</package>

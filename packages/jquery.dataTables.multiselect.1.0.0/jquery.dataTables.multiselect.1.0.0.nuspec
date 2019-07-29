@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="1.0.0">
+    <id>jquery.dataTables.multiselect</id>
+    <version>1.0.0</version>
+    <title>jquery.dataTables.multiselect</title>
+    <authors>ApiO</authors>
+    <owners>ApiO</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/ApiO/jquery.dataTables.multiselect</projectUrl>
+    <iconUrl>https://github.com/ApiO/jquery.buchette/blob/master/omfg.64x64.png?raw=true</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extension of jquery.dataTables plugin for multi selection</description>
+    <summary>Extension of jquery.dataTables plugin for multi selection</summary>
+    <copyright>The MIT License (MIT) Copyright (c) 2015</copyright>
+    <tags>jquery datatable multiselect select</tags>
+    <dependencies>
+      <dependency id="jquery.datatables" version="1.10.7" />
+      <dependency id="jquery" version="1.11.3" />
+    </dependencies>
+  </metadata>
+</package>

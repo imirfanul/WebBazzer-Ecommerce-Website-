@@ -1,0 +1,94 @@
+﻿@model WebBazzer.Models.Categorys
+
+@{
+   
+    ViewBag.Title = "Category";
+    ViewBag.SubTitle = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #errmsg {
+        color: red;
+    }
+
+    .field-validation-error {
+        margin-left: 140px;
+        color: red;
+    }
+
+    #wrapper {
+        width: 50%;
+        margin: 0 auto;
+        
+    }
+
+    input {
+        width: 240px;
+    }
+    h1{
+        color:red;
+        text-decoration-color:red;
+        font:bolder;
+        font-size:xx-large;
+        font-feature-settings:on;
+        
+    }
+</style>
+
+    #message {
+        color: red;
+        font: bolder;
+        font-family: fantasy;
+        font-size: larger;
+        font-style: italic;
+        font-feature-settings: on;
+    }
+   
+</style>
+<h1>Save</h1>
+
+<div id="wrapper">
+    @using (Html.BeginForm("Save", "Category", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="single-product-tab-area mg-b-30">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="input-group mg-b-pro-edt">
+                <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Save Category</span>
+            </div>
+            <div class="input-group mg-b-pro-edt">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                @Html.EditorFor(model => model.CName, new { htmlAttributes = new { @class = "form-control", placeholder = "Category Name" } })
+                @Html.ValidationMessageFor(model => model.CName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="input-group mg-b-pro-edt">
+                <input type="submit" value="Save" id="submit" class="btn btn-success"  />
+            </div>
+            
+        </div>
+
+
+    }
+    @if (ViewBag.Message != null)
+    {
+        <h3>@ViewBag.Message</h3>
+    }
+</div>
+@section Scripts {
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+}
+
+
+
+

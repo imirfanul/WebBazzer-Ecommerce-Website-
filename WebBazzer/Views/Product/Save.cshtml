@@ -1,0 +1,202 @@
+﻿@model WebBazzer.Models.Products
+
+@{
+
+    //Layout = null;
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title></title>
+   
+</head>
+<style>
+    #errmsg {
+        color: red;
+    }
+    h1{
+        color:red;
+        text-decoration-color:red;
+        font:bolder;
+        font-size:xx-large;
+        font-feature-settings:on;
+        
+    }
+    .field-validation-error {
+        margin-left: 140px;
+        color: red;
+    }
+
+    #wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    input {
+        width: 240px;
+    }
+
+    #message{
+        color:red;
+        font:bolder;
+        font-family:fantasy;
+        font-size:larger;
+        font-style:italic;
+        font-feature-settings:on;
+    }
+</style>
+
+
+
+<div id="wrapper">
+    @using (Html.BeginForm("Save", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+       <br/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+          @Html.AntiForgeryToken()
+    <div class="single-product-tab-area mg-b-30">
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon" style="color:white; font-size:xx-large;position:relative;font-weight:bolder"><i class="icon nalika-home icon-wrap" aria-hidden="true"></i>Save Product</span>
+        </div>
+
+        <div class="input-group mg-b-pro-edt">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(x => x.CategoryId, new { @class = "form-control" })*@
+            @Html.DropDownListFor(x => x.CategoryId, new SelectList(ViewBag.Category ?? "", "Value", "Text"), new { id = "CategoryId", @class = "form-control pro-edt-select form-control-primary" })
+            @Html.ValidationMessageFor(x => x.CategoryId)
+        </div>
+
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"><i class="icon nalika-like" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(x => x.SubCategoryId, new { @class = "form-control" })*@
+            @Html.DropDownListFor(x => x.SubCategoryId, new SelectList(ViewBag.SubCategory ?? "", "Value", "Text"), new { id = "SubCategoryId", @class = "form-control pro-edt-select form-control-primary" })
+            @Html.ValidationMessageFor(x => x.SubCategoryId)
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(x => x.SubCategoryId, new { @class = "col-md-3 control-label" })
+                <select id="SubCategoryId" name="subCategoryId" class="form-control">
+                    <option value="">--Select--</option>
+                </select>
+                @Html.ValidationMessageFor(x => x.SubCategoryId)
+            </div>*@
+
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(model => model.Name, new { @class = "form-control" })*@
+
+            @Html.TextBoxFor(x => x.PName, new { id = "Name", @class = "form-control", placeholder = "Product Name" })
+            @Html.ValidationMessageFor(x => x.PName)
+
+        </div>
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(model => model.Price, new { @class = "form-control" })*@
+
+            @Html.TextBoxFor(x => x.Price, new { id = "Price", @class = "form-control", placeholder = "Regular Price" })
+            @Html.ValidationMessageFor(x => x.Price)
+
+        </div>
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(model => model.ReorderLevel, new { @class = "form-control" })*@
+
+            @Html.TextBoxFor(x => x.ReorderLevel, new { id = "ReorderLevel", @class = "form-control", placeholder = "Reorder Level" })
+            @Html.ValidationMessageFor(x => x.ReorderLevel)
+
+        </div>
+
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"><i class="icon nalika-favorites-button" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(model => model.Description, new { @class = "form-control" })*@
+
+            @Html.TextBoxFor(x => x.Description, new { id = "Description", @class = "form-control", placeholder = "Product Description" })
+            @Html.ValidationMessageFor(x => x.Description)
+
+        </div>
+
+        <div class="input-group mg-b-pro-edt">
+            @*@Html.LabelFor(x => x.FileName, new { @class = "form-control" })*@
+            <span class="input-group-addon"><i class="fa fa-image" aria-hidden="true"></i></span>
+            @Html.TextBoxFor(x => x.FileName, new { type = "file"})
+            @Html.ValidationMessageFor(x => x.FileName)
+        </div>
+
+        <div class="input-group mg-b-pro-edt">
+            <span class="input-group-addon"><i class="icon nalika-favorites" aria-hidden="true"></i></span>
+            @*@Html.LabelFor(model => model.AvailableQuantity, new { @class = "form-control" })*@
+
+            @Html.TextBoxFor(x => x.AvailableQuantity, new { id = "AvailableQuantity", @class = "form-control", placeholder = "Stock In Quantity" })
+            @Html.ValidationMessageFor(x => x.AvailableQuantity)
+
+        </div>
+      
+
+        
+
+                <div class="input-group mg-b-pro-edt">
+
+                    <input type="submit" value="Save" id="submit" class="btn btn-success" />
+
+
+                </div>
+        </div>
+        }
+        @if (ViewBag.Message != null)
+    {
+
+
+            <p id="message">@ViewBag.Message</p>
+    }
+
+    </div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Content/Scripts/FileUpload.js"></script>
+   
+<script type="text/javascript">
+    $('#BSbtninfo').filestyle({
+        buttonName: 'btn-info',
+        buttonText: ' Select a Image File'
+    });
+    @*$(document).ready(function () {
+      
+        $("#CategoryId").change(function () {
+            var CategoryId = $("#CategoryId").val();
+            
+            var json = { categoryId: CategoryId };
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GetSubCategory","Product")',
+                
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(json),
+                success: function (data) {
+                    $("#SubCategoryId").empty();
+                    $("#SubCategoryId").append('<option value="">--Select--</option>');
+                    $.each(data, function (key, value) {
+                        $("#SubCategoryId").append('<option value=' + value.SubCategoryId + '>' + value.SubCategory + '</option>');
+                       
+                    });
+
+                }
+            });
+        });
+    });*@
+</script>
+
+}
+
+
+
+
+

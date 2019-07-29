@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="08f215521a4e435fa8d24aaa68856b21" Name="Diagram1">
+        <EntityTypeShape EntityType="WebBazerModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.admin_Employee" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Category" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Chart" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Country" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Coustomer" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.genMainSlider" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.genPromoRight" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Order" Width="1.5" PointX="6" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.OrderDetail" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Payment" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.PaymentType" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Product" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.RecentlyView" Width="1.5" PointX="13.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Review" Width="1.5" PointX="11.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Role" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.ShippingDetail" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.SubCategory" Width="1.5" PointX="3.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Supplier" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.sysdiagram" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.Wishlist" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebBazerModel.AllCategorisView" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="WebBazerModel.FK_genPromoRight_Category1" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Products_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Order_CoustomerRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Payment_CoustomerRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_RecentlyViews_CoustomerRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Review_CoustomerRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Wishlist_CoustomerRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Order_ShippingDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_OrderDetails_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Wishlist_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_RecentlyViews_OrderDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Payment_PaymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Products_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_RecentlyViews_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Review_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="WebBazerModel.FK_Wishlist_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

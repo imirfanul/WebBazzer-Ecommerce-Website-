@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EntityFramework.Toolkit.Core</id>
+    <version>1.0.6</version>
+    <title>EntityFramework.Toolkit.Core</title>
+    <authors>Thomas Galliker</authors>
+    <owners>Thomas Galliker</owners>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>https://github.com/thomasgalliker/EntityFramework.Toolkit</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/thomasgalliker/EntityFramework.Toolkit/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>EntityFramework.Toolkit is a library which provides implementations for EntityFramework best practices, patterns, utilities and extensions.</description>
+    <summary>EntityFramework.Toolkit is a library which provides implementations for EntityFramework best practices, patterns, utilities and extensions.</summary>
+    <releaseNotes>Release notes: https://www.nuget.org/packages/EntityFramework.Toolkit/</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <language>en-US</language>
+    <tags>Entity Framework EntityFramework UnitOfWork IUnitOfWork Repository IRepository DbContext DbContextBase ContextTestBase</tags>
+  </metadata>
+</package>
